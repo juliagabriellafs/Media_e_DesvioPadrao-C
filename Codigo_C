@@ -1,0 +1,21 @@
+import numpy as np
+
+# Função para ler 10 valores do teclado
+def ler_valores():
+    valores = []
+    for i in range(10):
+        valor = float(input(f"Digite o {i+1}º valor: "))
+        valores.append(valor)
+    return valores
+
+# Ler os valores
+valores = ler_valores()
+
+# Calcular a média e o desvio padrão
+media = np.mean(valores)
+desvio_padrao = np.std(valores, ddof=1)  # ddof=1 para desvio padrão amostral
+
+# Exibir os resultados
+print(f"\nValores digitados: {valores}")
+print(f"Média: {media:.6f}")
+print(f"Desvio padrão: {desvio_padrao:.6f}")
